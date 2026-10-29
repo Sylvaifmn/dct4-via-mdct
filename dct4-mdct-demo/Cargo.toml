@@ -1,0 +1,24 @@
+[package]
+name = "dct4-mdct-kit"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+description = "Indirect DCT-IV through an external MDCT backend: folding, the H1-H4 backend contract, compliance verification, and a GPU adaptation model"
+license = "MIT"
+readme = "README.md"
+keywords = ["dct-iv", "mdct", "audio-codec", "dsp", "compliance"]
+categories = ["multimedia::audio", "mathematics", "hardware-support"]
+publish = false
+
+[dependencies]
+
+[lints.rust]
+missing_docs = "warn"
+unsafe_code = "forbid"
+
+[profile.release]
+lto = true
+codegen-units = 1
+
+[profile.test]
+opt-level = 2
